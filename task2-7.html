@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>遮盖层</title>
+    <script src="script2-7/jquery-3.1.0.min.js"></script>
+    <link href="css2-7/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="wrap">
+    <h3>点击查看出现遮盖层</h3>
+    <table align="center">
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>职位</th>
+            <th>性别</th>
+            <th>操作</th>
+        </tr>
+
+        <tr>
+            <td>小张</td>
+            <td>28</td>
+            <td>前端工程师</td>
+            <td>男</td>
+            <td><a href="#" class="view">查看</a><a href="#" class="del">删除</a></td>
+        </tr>
+        <tr>
+            <td>李四</td>
+            <td>22</td>
+            <td>学生</td>
+            <td>男</td>
+            <td><a href="#" class="view">查看</a><a href="#" class="del">删除</a></td>
+        </tr>
+        <tr>
+            <td>小王</td>
+            <td>27</td>
+            <td>PHP工程师</td>
+            <td>女</td>
+            <td><a href="#" class="view">查看</a><a href="#" class="del">删除</a></td>
+        </tr>
+    </table>
+</div>
+
+<div class="popDiv">
+    <p><strong>姓名:</strong><span></span></p>
+    <p><strong>年龄:</strong><span></span></p>
+    <p><strong>职位:</strong><span></span></p>
+    <p><strong>性别:</strong><span></span></p>
+    <a href="#" class="close">关闭</a>
+</div>
+
+<script>
+    //查看
+    $('.view').click(function(){
+        var maskHeight = $(document).height();
+        var maskWidth = $(document).width();
+        //添加遮罩层
+        $('<div class="mask"></div>').appendTo($('body'));
+        $('div.mask').css({
+            'opacity':0.9,
+            'background':'#fff',
+            'position':'absolute',
+            'left':0,
+            'top':0,
+            'width':maskWidth,
+            'height':maskHeight,
+            'z-index':2
+        });
+
+        var arr=[];
+        $(this).parent().siblings().each(function(){
+            arr.push($(this).text());
+
+        });
+        $('.popDiv').show().children().each(function(i){
+            $(this).children('span').text(arr[i]);
+        });
+
+        //关闭
+        $('.close').click(function(){
+            $(this).parent().hide();
+            $('.mask').remove();
+        });
+    });
+
+    //删除
+    $('a.del').click(function(){
+        $(this).parents('tr').remove();
+    });
+</script>
+</body>
+</html>

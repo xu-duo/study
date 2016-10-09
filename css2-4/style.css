@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 楷体;
+    font-size: 16px;
+}
+.notice{
+    width: 398px;
+    height: 128px;
+    margin: 60px auto;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+.tit{
+    height: 37px;
+    position: relative;
+    background: #F7F7F7;
+
+}
+.tit ul{
+    position: absolute;
+    width: 401px;
+    left: -1px;
+}
+.tit li{
+    float: left;
+    width: 78px;
+    height: 36px;
+    padding: 0 1px;      /*在不高亮情况下,填充使充满*/
+    line-height: 36px;
+    text-align: center;
+    overflow: hidden;
+    background: #F7F7F7;
+    border-bottom: 1px solid #ddd;
+}
+
+.tit li.select{
+    background: #FFF;
+    border-bottom-color: #FFF;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    padding: 0;                /*加边框就要把在.tit li中的填充的去掉,故设为0px*/
+    font-weight: bolder;
+}
+.notice li a:link,.notice li a:visited{
+    text-decoration: none;
+    color: #000;
+}
+.notice li a:hover{
+    color: #F90;
+}
+
+.content .mod{
+    margin: 15px 10px 10px 19px;
+}
+.mod ul li{
+    float: left;
+    width: 180px;
+    height: 35px;
+    overflow: hidden;
+}

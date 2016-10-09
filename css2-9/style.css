@@ -1,0 +1,28 @@
+.wrap{
+    font-family: 楷体;
+    font-size: 17px;
+    width: 700px;
+    margin: 50px auto;
+    text-align: center;
+}
+.wrap label{
+    font-size: 18px;
+}
+.btn{
+    font-family: 楷体;
+    width: 80px;
+}
+table{
+    margin-top: 10px;
+    width: 600px;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+tr{
+    height: 30px;
+}
+th,td{
+    border: 1px solid #ddd;
+    text-align: center;
+}
+

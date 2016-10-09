@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: "Adobe Arabic";
+    color: #333;
+    background-color: #ccc;
+    margin: 1em 10%;
+}
+
+h1{
+    margin-left: 10px;
+    color: #333;
+    background-color: transparent;
+}
+
+a{
+    color: #c60;
+    background-color: transparent;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+ul{
+    padding: 0;
+}
+
+li{
+    float: left;
+    padding: 1em;
+    list-style: none;
+}
+
+img{
+    display: block;
+    clear: both;
+}
+p{
+    margin-top: 10px;
+    margin-left: 360px;
+    color: #c60;
+}
