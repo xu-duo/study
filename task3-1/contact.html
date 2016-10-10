@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>contact</title>
+    <link href="css/basic.css" rel="stylesheet" media="screen">
+</head>
+<body id="contact">
+<header>
+    <img src="images/LOGO.png" alt="火影忍者">
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="photos.html">Photos</a></li>
+            <li><a href="live.html">Live</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<article>
+    <h1>Contact the Naruto</h1>
+    <form method="post" action="submit.html">
+        <fieldset>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required="required">
+            </div>
+            <div>
+                <label for="eamil">Email:</label>
+                <input type="email" id="eamil" name="eamil" placeholder="Your email address" required="required">
+            </div>
+            <div>
+                <label for="message">Message:</label>
+                <textarea cols="45" rows="7" id="message" name="message" required="required" placeholder="Write your message here"></textarea>
+            </div>
+            <input type="submit" value="Send">
+        </fieldset>
+    </form>
+</article>
+
+<script src="script/global.js"></script>
+</body>
+</html>

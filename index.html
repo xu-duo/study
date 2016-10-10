@@ -10,27 +10,42 @@
             list-style:none;
         }
 
-        .menu{width:420px;
+        .menu{width:450px;
             margin:50px auto;
             border:2px solid #ccc;
+            border-radius: 10px;
         }
 
-        .menu p{height:40px;
-            line-height:40px;
+        .menu p{height:50px;
+            line-height:50px;
             font-weight:bold;
-            background:#eee;
-            border-bottom:1px solid #ccc;
+            border-bottom:2px solid #fff;
             cursor:pointer;
-            /*text-align: center;*/
             padding-left:10px;
+            background: #5bc0de;
+            border-radius: 10px;
         }
 
         .menu div ul{display:none;
         }
 
-        .menu li{height:30px;
-            line-height:30px;
+        .menu li{height:40px;
+            line-height:40px;
             padding-left:10px;
+            background-color: #ddd;
+            margin: 1px 0;
+            border-radius: 2px;
+        }
+        .menu li a{
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+        }
+        .menu li:hover{
+            background-color: #666;
+        }
+        .menu li a:hover{
+            color: #fff;
         }
     </style>
 </head>
@@ -38,7 +53,7 @@
 <div class="menu" id="menu">
     <div>
         <p>(一)静态页面</p>
-        <ul style="display:block">
+        <ul>
             <li><a href="task1-0.html">1.静态页面(一)-登陆界面</a></li>
             <li><a href="task1-1.html">2.静态页面(二)</a></li>
             <li><a href="task1-2.html">3.静态页面(三)-三栏式布局</a></li>
@@ -62,9 +77,8 @@
     <div>
         <p>(三)综合练习</p>
         <ul>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
+            <li><a href="task3-1/index.html">1.综合练习（JavaScript原生）</a></li>
+            <li><a href="task3-2/index.html">2.综合练习（Bootstrap响应式）</a></li>
         </ul>
     </div>
 </div>
@@ -79,15 +93,13 @@
         for(var i=0;i<ps.length;i++){
             // 获取点击的标题上的索引属性，根据该索引找到对应的列表
             ps[i].id = i;
-            ps[i].onmouseover = function(){
+            ps[i].onclick = function(){
                 for(var j=0;j<ps.length;j++){
                     uls[j].style.display = "none";
                 }
                 uls[this.id].style.display = "block";
-            }
+            };
         }
-        // 判断该列表，如果是显示的则将其隐藏，如果是隐藏的则将其显示出来
-
     }
 </script>
 </body>

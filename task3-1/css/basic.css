@@ -1,0 +1,284 @@
+/*@import url(layout.css);*/
+/*@import url(color.css);*/
+/*@import url(typography.css);*/
+
+
+/*结构*/
+section, header, article, nav{
+    display: block;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    margin: 1em 10%;
+    background-image: url("../images/background.gif");
+    background-attachment: fixed;
+    background-position: top left;
+    background-repeat: repeat-x;
+    max-width: 80em;
+}
+header{
+    background-image: url("../images/home.jpg");
+    background-repeat: no-repeat;
+    background-position: top right;
+    border-width: .1em;
+    border-style: solid;
+    border-bottom-width: 0;
+}
+header nav{
+    background-image: url("../images/navbar.gif");
+    background-position: bottom left;
+    background-repeat: repeat-x;
+    border-width: .1em;
+    border-style: solid;
+    border-bottom-width: 0;
+    border-top-width: 0;
+    padding-left: 10%;
+}
+header nav ul{
+    width: 100%;
+    overflow: hidden;
+    border-left-width: .1em;
+    border-left-style: solid;
+}
+header nav li{
+    display: inline;
+}
+header nav li a{
+    display: block;
+    float: left;
+    padding: .5em 2em;
+    border-right: .1em solid;
+}
+article{
+    border-width: .1em;
+    border-style: solid;
+    border-top-width: 0;
+    padding: 2em 10%;
+    line-height: 1.8em;
+
+}
+article img{
+    border-width: .1em;
+    border-style: solid;
+    outline-width: .1em;
+    outline-style: solid;
+}
+
+#about header{
+    background-image: url("../images/about.jpg");
+}
+#photos header{
+    background-image: url("../images/photo.jpg");
+}
+#live header{
+    background-image: url("../images/live.jpg");
+}
+#contact header{
+    background-image: url("../images/contact.jpg");
+}
+
+#slideshow{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+}
+#preview{
+    position: absolute;
+    border-width: 0;
+    outline-width: 0;
+}
+
+#frame{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+#imagegallery li{
+    display: inline;
+}
+
+/*live*/
+td{
+    padding: .5em 3em;
+}
+th{
+    color: #edc;
+    background-color: #455;
+}
+tr td{
+    color: #223;
+    background-color: #eb6;
+}
+
+dl{
+    overflow: hidden;
+}
+dt{
+    float: left;
+}
+dd{
+    float: left;
+}
+
+/*contact*/
+label{
+    display: block;
+}
+fieldset{
+    border: 0;
+}
+
+
+
+/*颜色*/
+body{
+    color: #fb5;
+    background-color: #334;
+}
+
+a:link{
+    color: #445;
+    background-color: #eb6;
+}
+a:visited{
+    color: #345;
+    background-color: #eb6;
+}
+a:hover{
+    color: #667;
+    background-color: #fb5;
+}
+a:active{
+    color: #778;
+    background-color: #ec8;
+}
+header{
+    color: #ec8;
+    background-color: #fff;
+    border-color: #667;
+}
+header nav{
+    color: #455;
+    background-color: #789;
+    border-color: #667;
+}
+article{
+    color: #223;
+    background-color: #edc;
+    border-color: #667;
+}
+header nav ul{
+    border-color: #99a;
+}
+header nav a:link,header nav a:visited{
+    color: #eef;
+    background-color: transparent;
+    border-color: #99a;
+}
+header nav a:hover{
+    color: #445;
+    background-color: #eb6;
+}
+header nav a:active{
+    color: #667;
+    background-color: #ec8;
+}
+article img{
+    border-color: #ba9;
+    outline-color: #dcb;
+}
+#imagegallery a{
+    background-color: transparent;
+}
+
+header nav a.here:link,
+header nav a.here:visited,
+header nav a.here:hover,
+header nav a.here:active {
+    color: #eef;
+    background-color: #799;
+}
+
+/*live*/
+tr.odd td{
+    color: #223;
+    background-color: #ec8;
+}
+tr.highlight td{
+    color: #223;
+    background-color: #cba;
+}
+
+/*contact*/
+input.placeholder{
+    color: grey;
+}
+
+
+
+/*字体及间距*/
+body{
+    font-size: 96%;
+    font-family: "Adobe Arabic",sans-serif;
+}
+body *{
+    font-size: 1em;
+}
+a{
+    font-weight: bold;
+    text-decoration: none;
+}
+header nav{
+    font-family: "Adobe Arabic",sans-serif;
+}
+header nav a{
+    text-decoration: none;
+    font-weight: bold;
+}
+article{
+    line-height: 1.8em;
+}
+article p{
+    margin: 1em 0;
+    font-family: 楷体;
+    font-size: 18px;
+    text-indent: 2em;
+}
+#intro{
+    font-family: "Adobe Arabic",sans-serif;
+}
+
+h1{
+    font-family: "Georgia","Times New Roman",sans-serif;
+    font: 2.4em normal;
+}
+h2{
+    font-family: "Georgia","Times New Roman",sans-serif;
+    font: 1.8em normal;
+    margin-top: 1em;
+}
+h3{
+    font-family: "Georgia","Times New Roman",sans-serif;
+    font: 1.4em normal;
+    margin-top: 1em;
+}
+#imagegallery li{
+    list-style-type: none;
+}
+textarea{
+    font-family: "Adobe Arabic",sans-serif;
+}
+
+/*live*/
+dt{
+    margin-right: 1em;
+}
+dd{
+    margin-right: 3em;
+}
