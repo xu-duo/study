@@ -348,10 +348,28 @@ function isFilled(field){
     return (field.value != placeholder);
 }
 
+
+/*function checkEmail()
+ {
+ var emailValue=document. getElementById("email").value;
+ if (!isEmail(emailValue))
+ {
+ alert("您输入的邮箱有误,请重新核对后再输入!");
+ document. getElementById("email").focus();
+ return false;
+ }
+ return true;
+ }
+
+ function isEmail(field){
+ var reg = /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/;
+ return reg.test(field);
+ }*/
+
+
 function isEmail(field){
     return (field.value.indexOf("@") != -1 && field.value.indexOf(".") != -1);
 }
-
 function validateFrom(whichform){
     for(var i=0;i<whichform.elements.length;i++){
         var element = whichform.elements[i];

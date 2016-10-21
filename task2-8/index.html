@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹出层及表单切换</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="script/jquery-3.1.0.min.js"></script>
+</head>
+<body>
+
+<div class="home">
+    <p class="tit">弹出框及表单切换</p>
+    <hr/>
+    <div class="main">
+        <ul>
+            <li><a href="#" class="login">登录</a></li>
+            <li><a href="#" class="enroll">注册</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="user">
+    <div class="container">
+        <div class="top">
+            <ul class="convert">
+                <li><a href="#">用户登录</a></li>
+                <li><a href="#">新用户注册</a></li>
+            </ul>
+            <div class="close">
+                <a href="#" class="turnOff">&times;</a>
+            </div>
+        </div>
+
+        <!-- 登录 -->
+        <div id="login">
+            <p>欢迎您的到来，请登录</p>
+            <form class="form">
+                <div class="box">
+                    <input type="text" placeholder="手机/用户名/邮箱">
+                </div>
+                <div class="box">
+                    <input type="text"  placeholder="输入6~32位密码">
+                </div>
+                <div class="box1">
+                    <input type="checkbox" id="self-motion" checked>
+                    <label for="self-motion">7天内自动登录</label>
+                    <label style="float: right">忘记密码</label>
+                </div>
+                <div class="box log">
+                    <input type="submit" value="登 录">
+                </div>
+            </form>
+        </div>
+
+
+        <!-- 注册 -->
+        <div id="enroll">
+            <p>新用户注册</p>
+            <form class="form">
+                <div class="box">
+                    <input type="text" placeholder="请输入手机号">
+                </div>
+                <div class="box">
+                    <input type="email" placeholder="输入邮箱">
+                </div>
+                <div class="box">
+                    <input type="text"  placeholder="输入6~32位密码">
+                </div>
+
+                <div class="box" id="dynamic">
+                    <input type="text"  placeholder="动态码">
+                    <a href="#">获取动态码</a>
+                </div>
+
+                <div class="box1">
+                    <input type="checkbox" id="agreement">
+                    <label for="agreement">我已阅读并同意 <a href="#">用户协议</a></label>
+                </div>
+
+                <div class="box log">
+                    <input type="submit" value="注册新用户">
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+        var $users = $('.user');
+        var $login = $users.find('#login');
+        var $enroll= $users.find('#enroll');
+
+        var $form = $('.convert');
+        var $tab_login = $form.children('li').eq(0).children('a');
+        var $tab_enroll = $form.children('li').eq(1).children('a');
+
+        //弹出窗口
+        var $main = $('.main').find('li');
+        $main.bind('click', function(event){
+            if( $(event.target).is($main) ) {
+                $(this).addClass('is-visible');
+            } else {
+                $main.removeClass('is-visible');
+                $users.addClass('is-visible');
+                ( $(event.target).is('.enroll')) ? enroll_selected() : login_selected();
+            }
+
+        });
+
+        //关闭弹出窗口
+        $users.bind('click', function(event){
+            if( $(event.target).is($users) || $(event.target).is('.turnOff') ) {
+                $users.removeClass('is-visible');
+            }
+        });
+
+        //切换登录注册
+        $form.bind('click', function(event) {
+            event.preventDefault();
+            ( $(event.target).is( $tab_login ) ) ? login_selected() : enroll_selected();
+        });
+
+        function login_selected(){
+            $login.addClass('is-selected');
+            $enroll.removeClass('is-selected');
+            $tab_login.addClass('selected');
+            $tab_enroll.removeClass('selected');
+        }
+
+        function enroll_selected(){
+            $login.removeClass('is-selected');
+            $enroll.addClass('is-selected');
+            $tab_login.removeClass('selected');
+            $tab_enroll.addClass('selected');
+        }
+
+    });
+</script>
+</body>
+</html>

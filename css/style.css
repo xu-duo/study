@@ -1,0 +1,64 @@
+*{margin:0;
+    padding:0;
+    font-size:20px;
+    list-style:none;
+}
+
+.menu{width:450px;
+    margin:50px auto;
+    border:1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 1px 3px 3px #ddd;
+}
+
+.menu p{height:60px;
+    line-height:60px;
+    font-weight:bold;
+    border-bottom:2px solid #ccc;
+    cursor:pointer;
+    padding-left:10px;
+    border-radius: 10px;
+}
+
+.menu div ul{display:none;
+}
+
+.menu li{
+    font-weight: bold;
+    width: 90%;
+    height:50px;
+    line-height:50px;
+    padding-left:10px;
+    margin: 1px 0 0 4%;
+    border-radius: 8px;
+    border-bottom:1px solid #ccc;
+    background-color: #c7ddef;
+}
+.menu li a{
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+.menu li:hover{
+    -webkit-transform-origin: bottom left;
+    -ms-transform-origin: bottom left;
+    -moz-transform-origin: bottom left;
+    -o-transform-origin: bottom left;
+    /*形变*/
+    -webkit-transform: scaleX(1.05);
+    -ms-transform: scaleX(1.05);
+    -moz-transform: scaleX(1.05);
+    -o-transform: scaleX(1.05);
+    /*过渡时间 效果*/
+    -webkit-transition: 0.35s linear;    /* Safari 和 Chrome */
+    -ms-transition: 0.35s linear;        /* IE 9 */
+    -moz-transition: 0.35s linear;       /* Firefox */
+    -o-transition: 0.35s linear;
+
+}
+.menu li:hover,.menu li a:hover{
+    color: #fff;
+    font-size: 22px;
+}

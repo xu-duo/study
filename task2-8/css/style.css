@@ -1,0 +1,223 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/*登录首页*/
+.home{
+    margin: 20px 300px;
+}
+.tit{
+    margin: 30px auto;
+    text-align: center;
+    color: #009980;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.main{
+    margin: 40px 290px;
+}
+.main ul{
+    margin: 10px;
+    text-align: center;
+}
+.main ul li{
+    margin-bottom: 10px;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    list-style-type: none;
+    background-color: #009980;
+    margin-left: 30px;
+    border-radius: 20px;
+    box-shadow: 1px 2px 3px #ccc;
+}
+.main ul li a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 20px;
+}
+.main ul li a:hover{
+    background-color: #3D3D3D;
+}
+
+
+/*弹出框*/
+.user{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 3;
+    visibility: hidden;
+}
+.user.is-visible {
+    visibility: visible;
+}
+
+.user.is-visible .container {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.container {
+    position: relative;
+    width: 90%;
+    max-width: 550px;
+    background: #FFF;
+    margin: 80px auto;
+    padding-bottom: 20px;
+    border: 1px solid #666;
+    box-shadow: 2px 3px 3px #666;
+    -webkit-transform: translateY(-30px);
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -o-transform: translateY(-30px);
+    transform: translateY(-30px);
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -ms-transition-property: -webkit-transform;
+    -o-transition-property: -moz-transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -ms-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.top{
+    padding-right: 40px;
+    position: relative;
+}
+
+.top .close{
+    position: absolute;
+    top: 0;
+    right: 5px;
+}
+.top .close a{
+    text-decoration: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+}
+.top .convert li {
+    list-style-type: none;
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+.top .convert a {
+    font-size: 20px;
+    display: block;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-decoration: none;
+    color: #505260;
+}
+
+.container .top:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.top .convert a.selected {
+    color: red;
+    border-bottom: 1px solid red;
+}
+
+
+/*登录*/
+#login{
+    margin: 20px 50px;
+}
+
+#login p{
+    font-size: 22px;
+    margin: 20px 0;
+    border-bottom: 1px solid #ddd;
+    padding: 0 0 10px 0;
+}
+.form .box{
+    margin: 20px auto;
+}
+.box input{
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+}
+.box1{
+    margin-top: 30px;
+    font-size: 14px;
+    color: #666;
+}
+
+.log input{
+    font-size: 22px;
+    background-color: #009980;
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.log input:hover{
+    opacity: 0.7;
+}
+
+
+
+/*注册*/
+#enroll{
+    margin: 20px 50px;
+}
+#enroll p{
+    font-size: 22px;
+    margin: 20px 0;
+    border-bottom: 1px solid #ddd;
+    padding: 0 0 10px 0;
+}
+
+#dynamic input{
+    width:50%;
+    float: left;
+}
+#dynamic a{
+    float: left;
+    margin-left: 20px;
+    display: inline-block;
+    text-decoration: none;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #666;
+    background: #ccc;
+    text-align: center;
+}
+#dynamic a:hover{
+    background-color: #009980;
+    color: #fff;
+}
+#dynamic:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#login, #enroll {
+    display: none;
+}
+
+#login.is-selected, #enroll.is-selected{
+    display: block;
+}

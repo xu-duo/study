@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滚动公告</title>
+    <script src="script/jquery-3.1.0.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="content">
+    <ul>
+        <li class="tit">登鹳雀楼</li>
+        <li>白日依山尽，黄河入海流。</li>
+        <li>欲穷千里目，更上一层楼。</li>
+        <li class="tit">寻隐者不遇</li>
+        <li>松下问童子，言师采药去。</li>
+        <li>只在此山中，云深不知处。</li>
+        <li class="tit">枫桥夜泊</li>
+        <li>月落乌啼霜满天，江枫渔火对愁眠。</li>
+        <li>姑苏城外寒山寺，夜半钟声到客船。</li>
+        <li class="tit">赤壁</li>
+        <li>折戟沉沙铁未销，自将磨洗认前朝。</li>
+        <li>东风不与周郎便，铜雀春深锁二乔。</li>
+        <li class="tit">乌衣巷</li>
+        <li>朱雀桥边野草花，乌衣巷口夕阳斜。</li>
+        <li>旧时王谢堂前燕，飞入寻常百姓家。</li>
+    </ul>
+</div>
+
+
+<script>
+    setInterval(function(){
+        var newLi = $('ul>:first').clone(true);
+        $('ul').append(newLi);
+        $('ul>:first').remove();
+    },2000);
+</script>
+</body>
+</html>

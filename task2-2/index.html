@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格的增加删除</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="content">
+    <h3>输入框内填写姓名年龄</h3>
+    姓名：<input id="name" type="text">
+    年龄：<input id="age" type="text">
+    <input id="btn" type="button" value="添 加" />
+    <table id="tab" border="1" align="center">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+
+    <script>
+        window.onload=function (){
+            var oTab=document.getElementById('tab');
+
+            var oBtn=document.getElementById('btn');
+            var oName=document.getElementById('name');
+            var oAge=document.getElementById('age');
+            var id=oTab.tBodies[0].rows.length+1;
+
+            oBtn.onclick=function (){
+                if(oName.value == '' || oAge.value == ''){
+                    oBtn.style.disabled = 'disabled';
+                    alert('请输入姓名和年龄!!!');
+                }else{
+                    var oTr=document.createElement('tr');
+
+                    var oTd=document.createElement('td');
+                    oTd.innerHTML=id++;	//为Id的增加
+                    oTr.appendChild(oTd);
+
+                    //获取输入框姓名的值
+                    var oTd=document.createElement('td');
+                    oTd.innerHTML=oName.value;
+                    oTr.appendChild(oTd);
+
+                    //获取输入框年龄的值
+                    var oTd=document.createElement('td');
+                    oTd.innerHTML=oAge.value;
+                    oTr.appendChild(oTd);
+
+                    var oTd=document.createElement('td');
+                    oTd.innerHTML='<a href="javascript:;">删除</a>';
+                    oTr.appendChild(oTd);
+
+                    oTd.getElementsByTagName('a')[0].onclick=function (){
+                        oTab.tBodies[0].removeChild(this.parentNode.parentNode);
+                    };
+
+                    oTab.tBodies[0].appendChild(oTr);
+                }
+
+            };
+        };
+    </script>
+
+</body>
+</html>

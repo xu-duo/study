@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.content{
+    width: 400px;
+    margin: 50px auto;
+    height: 500px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    font-family: 楷体;
+    box-shadow: 1px 3px 8px #666;
+    border-radius: 5px;
+}
+ul{
+    list-style-type: none;
+}
+li{
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.tit{
+    text-align: center;
+    color: #cc6600;
+    font-size: 20px;
+    margin-top: 15px;
+}

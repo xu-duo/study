@@ -3,75 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>首页封面</title>
-    <style type="text/css">
-        *{margin:0;
-            padding:0;
-            font-size:18px;
-            list-style:none;
-        }
-
-        .menu{width:450px;
-            margin:50px auto;
-            border:2px solid #ccc;
-            border-radius: 10px;
-        }
-
-        .menu p{height:50px;
-            line-height:50px;
-            font-weight:bold;
-            border-bottom:2px solid #fff;
-            cursor:pointer;
-            padding-left:10px;
-            background: #5bc0de;
-            border-radius: 10px;
-        }
-
-        .menu div ul{display:none;
-        }
-
-        .menu li{height:40px;
-            line-height:40px;
-            padding-left:10px;
-            background-color: #ddd;
-            margin: 1px 0;
-            border-radius: 2px;
-        }
-        .menu li a{
-            text-decoration: none;
-            color: black;
-            font-size: 16px;
-        }
-        .menu li:hover{
-            background-color: #666;
-        }
-        .menu li a:hover{
-            color: #fff;
-        }
-    </style>
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 <div class="menu" id="menu">
     <div>
         <p>(一)静态页面</p>
         <ul>
-            <li><a href="task1-0.html">1.静态页面(一)-登陆界面</a></li>
-            <li><a href="task1-1.html">2.静态页面(二)</a></li>
-            <li><a href="task1-2.html">3.静态页面(三)-三栏式布局</a></li>
-            <li><a href="task1-3.html">4.静态页面(四)-定位与居中</a></li>
-            <li><a href="task1-4.html">5.静态页面(五)-模拟排版</a></li>
-            <li><a href="task1-5.html">6.静态页面(六)-页面样式布局</a></li>
-            <li><a href="task1-6.html">7.静态页面(七)-HTML和CSS实现响应布局</a></li>
+            <li><a href="task1-1/index.html">1.静态页面(一)-模拟报纸排版</a></li>
+            <li><a href="task1-2/index.html">2.静态页面(二)-页面样式布局</a></li>
         </ul>
     </div>
     <div>
         <p>(二)常用效果</p>
         <ul>
-            <li><a href="task2-1.html">1.图片切换</a></li>
-            <li><a href="task2-3.html">2.添加表格及删除操作</a></li>
-            <li><a href="task2-4.html">3.Tab选项卡手动及自动切换</a></li>
-            <li><a href="task2-7.html">4.遮盖层</a></li>
-            <li><a href="task2-9.html">5.表格内容查找</a></li>
-            <li><a href="task2-10.html">6.轮播图（自动及无缝播放）</a></li>
+            <li><a href="task2-1/index.html">1.图片切换</a></li>
+            <li><a href="task2-2/index.html">2.添加表格及删除操作</a></li>
+            <li><a href="task2-3/index.html">3.Tab选项卡切换</a></li>
+            <li><a href="task2-4/index.html">4.表格内容查找</a></li>
+            <li><a href="task2-5/index.html">5.瀑布流</a></li>
+            <li><a href="task2-6/index.html">6.滚动公告</a></li>
+            <li><a href="task2-7/index.html">7.轮播图</a></li>
+            <li><a href="task2-8/index.html">8.弹出层及表单切换</a></li>
         </ul>
     </div>
     <div>
@@ -93,14 +46,25 @@
         for(var i=0;i<ps.length;i++){
             // 获取点击的标题上的索引属性，根据该索引找到对应的列表
             ps[i].id = i;
+            var ID = -1;
+            var open = false;
             ps[i].onclick = function(){
-                for(var j=0;j<ps.length;j++){
-                    uls[j].style.display = "none";
+                for(var i=0; i<ps.length; i++){
+                    uls[i].style.display = 'none';
                 }
-                uls[this.id].style.display = "block";
+                if(ID == this.id && open){
+                    uls[this.id].style.display = 'none';
+                    open = false;
+                } else {
+                    uls[this.id].style.display = 'block';
+                    open = true;
+                }
+                ID = this.id;
             };
         }
     }
+
+
 </script>
 </body>
 </html>

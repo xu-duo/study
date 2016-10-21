@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实现常见的技术产品官网的页面架构及样式布局</title>
+</head>
+<link href="css/style.css" rel="stylesheet">
+<body>
+    <div id="container">
+        <div id="header">
+            <p>新世界</p>
+            <ul>
+                <li class="active"><a href="#">首页</a></li>
+                <li><a href="#">最新活动</a></li>
+                <li><a href="#">项目介绍</a></li>
+                <li><a href="#">爱心社区</a></li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+            <div>
+                <a href="#">登录</a>
+            </div>
+        </div>
+
+        <div id="content">
+            <div id="part1">
+                <p id="p1">Time of new life</p>
+                <p id="p2">新时代,年轻的人们让我们一起<br/>体验新生活,享受新生活</p>
+                <input id="put2" type="button" value="开始体验">
+            </div>
+
+            <div id="part1_text" >
+                <p>打造全新世界观,让你更爱你的生活</p>
+                <p>丰富多彩的公益活动,发挥新世界的主人公意识</p>
+                <p>时尚的新理念,超前体验未知的生活</p>
+                <p id="p3">完善的培养机制,培养你全新的世界观</p>
+            </div>
+        </div>
+
+        <div id="part2">
+            <div id="part2_top">
+                <p id="p4">关于新世界,你不知道的还有什么?</p>
+            </div>
+            <div id="part2_bottom">
+                <p id="p5">查找新世界城市活动信息<br/>__</p>
+                <p id="p6">每个城市的有不同的活动信息,请自主查询您所需要了解的城市</p>
+                <div id="part2_shu">
+                    <select id="select1">
+                        <!--value为当前的地名,选中的标签为selected-->
+                        <option value="国家" selected="selected">国家</option>
+                        <option value="国家">中国</option>
+                    </select>
+                    <select>
+                        <option value="省份">省份</option>
+                        <option value="北京市">北京市</option>
+                        <option value="天津市">天津市</option>
+                        <option value="河北省">河北省</option>
+                        <option value="陕西省">陕西省</option>
+                        <option value="河南省">河南省</option>
+                        <option value="浙江省">浙江省</option>
+                        <option value="广东省">广东省</option>
+                        <option value="湖北省">湖北省</option>
+                        <option value="上海市">上海市</option>
+                    </select>
+                    <select>
+                        <option value="城市">城市</option>
+                        <option value="北京">北京</option>
+                        <option value="上海">上海</option>
+                        <option value="杭州">杭州</option>
+                    </select>
+                    <input type="button" value="搜 索">
+                </div>
+            </div>
+        </div>
+        <div id="part3">
+            <div id="part3_top">
+                <div id="image1">
+                    <img src="image/4d6f8d10981a824a203f2e91.jpg" width="220px" height="335px">
+                    <p>北京活动<span>新社区大联盟</span></p>
+                </div>
+                <div id="image2">
+                    <p>上 海 活 动<span>夜上海新景观探索</span></p>
+                    <img src="image/024c828ba61ea8d3c9940f41970a304e241f5872.jpg" width="220px" height="335px">
+                </div>
+                <div id="image3">
+                    <img src="image/43b80cf38839c0800b46e091.jpg" width="220px" height="335px">
+                    <p>深圳活动<span>全新海岸线观点站</span></p>
+                </div>
+                <div id="image4">
+                    <img src="image/e0bfb3de9c82d158e6d322f4800a19d8bd3e4253.jpg" width="220px" height="335px">
+                    <p>香港活动<span>奢侈消费大派送</span></p>
+                </div>
+            </div>
+
+            <div id="part3_center">
+                <div id="top">
+                    <div id="top_left">
+                        <p id="p7">新世界</p>
+                        <p id="p8">TIME</p>
+                        <p id="p9">@新世界-北京<br/>2016.04.01</p>
+                    </div>
+
+                    <div id="top_right">
+                        <div>新世界/<span>01</span></div>
+                        <p>新世界是个新世界新世界是个新世界新世界是个新世界
+                            <br/>新世界是个新世界新世界是个新世界新世界是个新世界
+                            <br/>新世界是个新世界新世界是个新世界新世界是个新世界
+                            <br/>新世界是个新世界新世界是个新世界</p>
+                        <div class="more">
+                            <a href="#">更多详情</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="bottom">
+                    <div class="div1">
+                        <p>新时代<br/>关于爱生活的我们<br/>___</p>
+                        <div>
+                            <button type="button">查看更多</button>
+                        </div>
+                    </div>
+                    <div class="div2">
+                        <p>新时代<br/>关于爱生活的我们<br/>___</p>
+                        <div>
+                            <button type="button">查看更多</button>
+                        </div>
+                    </div>
+                    <div class="div3"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="part4">
+            <div id="part4_top">
+                <div>成为我们的志愿者<br/><span>___</span></div>
+                <p>新世界的大家庭需要每一个爱生活的人加入,如果你够年轻,有梦想,有激情
+                    <br/>那就不要犹豫,快来加入我们,成为改变所有人生活的人
+                </p>
+            </div>
+
+            <div id="part4_bottom">
+                <div class="left">
+                    <div class="div4">
+                        <h3>新世界志愿者协议</h3>
+                        <p>加入新世界志愿者的人员必须遵守中华人名共和国的
+                            <br/>相关法律法规,并且本着平等资源的原则......</p>
+                        <a href="#">more</a>
+                    </div>
+                    <div class="div5">
+                        <h3>新世界志愿者权利</h3>
+                        <p>新世界志愿者享受新世界内部所有资源共享的权利,并
+                            <br/>且享受所在四新世界活动的优先参与资格......</p>
+                        <a href="#">more</a>
+                    </div>
+                    <div class="div6">
+                        <h3>更多条款</h3>
+                        <a href="#">more</a>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <form>
+                        <div>
+                            <input type="text" value="姓名:">  <input type="text" value="年龄:"><br/>
+                        </div>
+                        <div>
+                            <input type="text" value="联系方式:">  <input type="text" value="联系地址:"><br/>
+                        </div>
+                    </form>
+                    <div class="div7">
+                        <input type="text" value="请简单描述您梦想的生活:">
+                    </div>
+                    <div class="div8">
+                        <input type="button" value="提交申请">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div id="top_footer">
+                <h3>联系我们</h3>
+                <p>为了更好地获取我们最新产品的资讯,您可以留下您的电子邮箱快速订阅我们的产品资讯
+                    <br/><span>也可以通过以下任何方式关注我们动态</span>
+                </p>
+                <div class="put">
+                    <input id="input1" type="text" placeholder="someone@email.com">
+                    <input id="input2" type="submit" value="提 交">
+                </div>
+            </div>
+
+            <div id="bottom_footer">
+                <p>@2016新世界</p>
+                <a href="#">back to top</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
