@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟队列</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="wrap">
+    <input id="text" type="text">
+    <input class="button" type="button" value="左侧入">
+    <input class="button" type="button" value="右侧入">
+    <input class="button" type="button" value="左侧出">
+    <input class="button" type="button" value="右侧出">
+</div>
+<div id="content"></div>
+
+<script type="text/javascript">
+    window.onload = function(){
+        var content = document.getElementById('content');
+        var btn = document.getElementsByClassName('button');
+        var tex = document.getElementById('text');
+
+        btn[0].onclick = function(){
+            if(tex.value.length<=0 || !tex.value.match(/^[\+\-]?\d*?\.?\d*?$/)){
+                alert('请输入数字');
+                return false;
+            }
+            var newSpan = document.createElement('span');
+            newSpan.innerHTML = tex.value;
+            content.insertBefore(newSpan,content.firstChild);
+            tex.value = null;
+        };
+
+        btn[1].onclick = function(){
+            if(tex.value.length<=0 || !tex.value.match(/^[\+\-]?\d*?\.?\d*?$/)){
+                alert('请输入数字');
+            }
+            var newSpan = document.createElement('span');
+            newSpan.innerHTML = tex.value;
+            content.appendChild(newSpan);
+            tex.value = null;
+        };
+
+        btn[2].onclick = function(){
+            if(content.childNodes.length <= 0){
+                alert('队列为空');
+            }else{
+                alert(content.firstChild.innerHTML);
+                content.removeChild(content.firstChild);
+            }
+
+        };
+        btn[3].onclick = function(){
+            if(content.childNodes.length <= 0){
+                alert('队列为空');
+            }else {
+                alert(content.lastChild.innerHTML);
+                content.removeChild(content.lastChild);
+            }
+        };
+        content.onmouseover = function(){
+            var del = content.getElementsByTagName('span');
+            for(var i=0;i<del.length;i++){
+                del[i].index = i;
+                del[i].onclick = function(){
+                    content.removeChild(content.childNodes[this.index]);
+                };
+            }
+        };
+    }
+</script>
+</body>
+</html>
