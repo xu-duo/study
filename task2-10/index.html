@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟队列、输入验证及排序</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <p class="tit">模拟队列、输入验证及排序</p>
+    <div id="wrap">
+        <input id="text" type="text" placeholder="请输入10-100之间的数字">
+        <input class="button" type="button" value="左侧入">
+        <input class="button" type="button" value="右侧入">
+        <input class="button" type="button" value="左侧出">
+        <input class="button" type="button" value="右侧出">
+        <input class="button" type="button" value="什序">
+        <input class="button" type="button" value="降序">
+    </div>
+    <div id="content"></div>
+</div>
+
+
+<script type="text/javascript">
+    window.onload = function() {
+        var content = document.getElementById('content');
+        var btn = document.getElementsByClassName('button');
+        var tex = document.getElementById('text');
+
+        function putNum(e) {
+            if (content.childNodes.length >= 60) {
+                alert('队列元素不能超过60个');
+                return false;
+            } else if (!tex.value.match(/^[\+\-]?\d*?\.?\d*?$/) || tex.value > 100 || tex.value < 10) {
+                alert('请输入10-100之内的数字');
+                return false;
+            } else {
+                var newSpan = document.createElement('span');
+                newSpan.style.height = 2 * tex.value + 'px';
+                newSpan.innerHTML = tex.value;
+                if (e == 0) {
+                    content.insertBefore(newSpan, content.firstChild);
+                } else if (e == 1) {
+                    content.appendChild(newSpan);
+                }
+                tex.value = null;
+            }
+        }
+
+        function delNum(e) {
+            if (content.childNodes.length <= 0) {
+                alert('队列为空');
+            } else {
+                if (e == 2) {
+                    alert(content.firstChild.innerHTML);
+                    content.removeChild(content.firstChild);
+                } else if (e == 3) {
+                    alert(content.lastChild.innerHTML);
+                    content.removeChild(content.lastChild);
+                }
+            }
+        }
+
+        btn[0].onclick = function () {
+            putNum(0);
+        };
+
+        btn[1].onclick = function () {
+            putNum(1);
+        };
+
+        btn[2].onclick = function () {
+            delNum(2);
+        };
+
+        btn[3].onclick = function () {
+            delNum(3);
+        };
+
+        //升序
+        btn[4].onclick = function () {
+            compare();
+            function compare() {
+                var span = content.getElementsByTagName('span');
+                var list = span.length;
+                while (list) {
+                    for (var i = 0; i < list - 1; i++) {
+                        if (parseInt(span[i].textContent) > parseInt(span[i + 1].textContent)) {
+                            content.insertBefore(span[i + 1], span[i]);
+                        }
+                    }
+                    list--;
+                }
+            }
+        };
+        //降序
+        btn[5].onclick = function () {
+            compare();
+            function compare() {
+                var span = content.getElementsByTagName('span');
+                var list = span.length;
+                while (list) {
+                    for (var i = 0; i < list - 1; i++) {
+                        if (parseInt(span[i].textContent) < parseInt(span[i + 1].textContent)) {
+                            content.insertBefore(span[i + 1], span[i]);
+                        }
+                    }
+                    list--;
+                }
+            }
+        };
+
+        //删除选中的项
+        content.onmouseover = function () {
+            var del = content.getElementsByTagName('span');
+            for (var i = 0; i < del.length; i++) {
+                del[i].index = i;
+                del[i].onclick = function () {
+                    content.removeChild(content.childNodes[this.index]);
+                };
+            }
+        };
+    }
+
+</script>
+</body>
+</html>

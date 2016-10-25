@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    margin: 30px auto;
+}
+.container .tit{
+    font-size: 18px;
+    color: darkturquoise;
+    width: 800px;
+    margin: 30px auto;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+#wrap{
+    text-align: center;
+}
+#wrap input{
+
+}
+#text{
+    width: 300px;
+    height: 30px;
+}
+.button{
+    width: 60px;
+    height: 32px;
+    font-size: 18px;
+    font-family: 楷体;
+    color: #fff;
+    background-color: darkturquoise;
+    outline: none;
+}
+#content{
+    text-align: center;
+    margin-top: 40px;
+    height: 100px;
+
+}
+span{
+    vertical-align: bottom;  /*底部对其*/
+    display: inline-block;
+    width: 30px;
+    color: #fff;
+    background-color: darkturquoise;
+    text-align: center;
+    margin: 2px;
+}
